@@ -8,10 +8,10 @@ export default function Header() {
                     <img src="./images/logo.jpg" alt="logo" /> 
                 </Link>
 
-                <Link to="/games">Catalog</Link>
+                <Link to="/">Catalog</Link>
 
                 <div id="user">
-                    <Link to="/games/create">Add Game</Link>
+                    <Link to="//create">Save your time</Link>
                     <Link to="/logout">Logout</Link>
                 </div>
 
