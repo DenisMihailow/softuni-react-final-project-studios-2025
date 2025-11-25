@@ -1,0 +1,89 @@
+.nails {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/nails-background.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  opacity: 0.;
+}
+
+/* ---------------- TEXT TITLE ---------------- */
+.title {
+  position: absolute;
+  top: 130px;
+  width: 100%;
+  text-align: center;
+  font-size: 52px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 18px black;
+  letter-spacing: 2px;
+}
+
+/* ---------------- CARD SECTION ---------------- */
+.nails-cards {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  position: absolute;
+  bottom: 70px;
+  width: 100%;
+}
+
+.nails-card {
+  width: 240px;
+  height: 350px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transform: rotate(-4deg);
+  transition: 0.3s ease;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.nails-card:nth-child(2) {
+  transform: rotate(0deg) scale(1.12);
+}
+
+.nails-card:hover {
+  transform: scale(1.15);
+}
+
+/* IMAGE */
+.nails-card img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+/* INFO BLOCK */
+.nails-info {
+  padding: 12px;
+  text-align: center;
+}
+
+.nails-info h3 {
+  color: white;
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+.nails-info button {
+  padding: 6px 16px;
+  background: #ff87c0;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nails-info button:hover {
+  background: #ff5daa;
+}

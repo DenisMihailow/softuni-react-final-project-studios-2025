@@ -1,0 +1,73 @@
+/* HEADER ALWAYS ON TOP */
+header {
+  width: 100%;
+  position: absolute;
+  top: 20px;
+  /* left: 0; */
+  z-index: 100;
+}
+
+
+/* ---------------- NAV CONTAINER ---------------- */
+nav {
+  width: 800px;                 /* ширина на лентата */
+  margin-left: auto;
+  margin-right: 40px;
+
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  padding: 12px 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+
+
+/* ---------------- LEFT DECORATION IMAGE ---------------- */
+nav::before {
+  content: "";
+  /* background-image: url("../images/nail.png"); */
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  width: 70px;
+  height: 70px;
+
+  position: absolute;
+  left: -90px;            /* изнесено вляво от контейнера */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+nav .home img {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+/* NAV LINKS */
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;        /* увеличен шрифт */
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: #ff87c0;         /* розов hover за nails theme */
+}
+
+
+/* USER + GUEST BLOCKS */
+#user,
+#guest {
+  display: flex;
+  gap: 20px;
+}
