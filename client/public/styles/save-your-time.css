@@ -1,0 +1,104 @@
+/* FORM BACKGROUND AREA */
+#add-page {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 120px;
+}
+
+/* FORM CARD */
+#save-time-form {
+  width: 550px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 30px 35px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+#save-time-form .container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* TITLE */
+#save-time-form h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: white;
+  text-shadow: 0 0 10px black;
+}
+
+/* HALF GROUPS (2 per row) */
+.form-group-half {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* FULL width element (like combobox) */
+.form-group-full {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* LABELS */
+label {
+  color: white;
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* INPUTS AND SELECTS */
+input,
+select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.35);
+  color: black;
+  font-size: 15px;
+}
+
+input::placeholder {
+  color: #444;
+}
+
+/* SUBMIT BUTTON */
+.btn.submit {
+  padding: 12px 20px;
+  background: #ff87c0;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+
+.btn.submit:hover {
+  background: #ff5daa;
+  transform: scale(1.05);
+}
+
+/* TWO INPUTS IN A ROW */
+#save-time-form .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* TITLE AND SUBMIT FULL WIDTH */
+#save-time-form h1,
+.btn.submit,
+.form-group-full {
+  grid-column: span 2;
+}

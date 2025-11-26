@@ -7,13 +7,12 @@ header {
   z-index: 100;
 }
 
-
 /* ---------------- NAV CONTAINER ---------------- */
 nav {
-  width: 800px;                 /* ширина на лентата */
+  width: 600px;                 /* ширина на лентата */
   margin-left: auto;
   margin-right: 40px;
-
+  /* background: rgba(1, 7, 8, 0.164); */
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(10px);
   border-radius: 20px;
@@ -43,6 +42,7 @@ nav::before {
   top: 50%;
   transform: translateY(-50%);
 }
+
 
 nav .home img {
   width: 70px;

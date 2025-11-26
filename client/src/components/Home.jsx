@@ -7,7 +7,7 @@ export default function Home() {
 
       <div className="nails-cards">
         <div className="nails-card">
-          <img src="./styles/nails1.jpg" alt="Manicure" />
+          <img src="./styles/nails1.jpg" alt="" />
           <div className="nails-info">
             <h3>Manicure</h3>
             <button>Details</button>
@@ -15,7 +15,7 @@ export default function Home() {
         </div>
 
         <div className="nails-card">
-          <img src="./styles/nails2.jpg" alt="Gel Nails" />
+          <img src="./styles/nails2.jpg" alt="" />
           <div className="nails-info">
             <h3>Gel Nails</h3>
             <button>Details</button>
@@ -23,7 +23,7 @@ export default function Home() {
         </div>
 
         <div className="nails-card">
-          <img src="./styles/nails3.jpg" alt="Nail Art" />
+          <img src="./styles/nails3.jpg" alt="" />
           <div className="nails-info">
             <h3>Nail Art</h3>
             <button>Details</button>

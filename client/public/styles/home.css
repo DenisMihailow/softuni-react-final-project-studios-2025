@@ -1,14 +1,27 @@
 .nails {
+  position: relative;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
+}
+
+/* Замъгленият background – само за снимката */
+.nails::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-image: url("../images/nails-background.jpeg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  overflow: hidden;
-  opacity: 0.;
+  filter: blur(5px);        /* ← размазване */
+  opacity: 0.9;             /* ← прозрачност */
 }
+
+/* Всичко вътре остава нормално */
+/* .nails > * {
+  position: relative;
+  z-index: 1;
+} */
 
 /* ---------------- TEXT TITLE ---------------- */
 .title {
@@ -18,7 +31,7 @@
   text-align: center;
   font-size: 52px;
   font-weight: bold;
-  color: white;
+  color: rgb(225, 222, 222);
   text-shadow: 0 0 18px black;
   letter-spacing: 2px;
 }

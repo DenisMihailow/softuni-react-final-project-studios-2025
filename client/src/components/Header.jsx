@@ -8,10 +8,10 @@ export default function Header() {
                     <img src="./images/logo.jpg" alt="logo" /> 
                 </Link>
 
-                <Link to="/">Catalog</Link>
+                <Link to="/nails">Catalog</Link>
 
                 <div id="user">
-                    <Link to="//create">Save your time</Link>
+                    <Link to="/nails/book">Book Now</Link>
                     <Link to="/logout">Logout</Link>
                 </div>
 
