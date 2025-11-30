@@ -1,0 +1,24 @@
+
+
+body {
+  background-image: url("../images/nails-background.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; /* остава фиксиран при скрол */
+  margin: 0;
+  padding: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: inherit;
+  background-size: inherit;
+  background-position: inherit;
+  background-repeat: inherit;
+  filter: blur(6px);
+  opacity: 0.7;
+  z-index: -1;
+}
