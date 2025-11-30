@@ -31,7 +31,7 @@ export default function SaveYourTime() {
                     </div>
 
                     {/* Procedure ComboBox */}
-                    <div className="form-group-full">
+                    <div className="form-group-half">
                         <label htmlFor="procedure">Procedure Type:</label>
                         <select id="procedure" name="procedure">
                             <option value="">Select procedure...</option>
@@ -42,6 +42,10 @@ export default function SaveYourTime() {
                             <option value="spa">Spa Treatment</option>
                         </select>
                     </div>
+                    <div className="form-group-half">
+                    <label htmlFor="releaseDate">Release Date:</label>
+                    <input type="date" id="releaseDate" name="date"/>
+                </div>
 
                     {/* Submit */}
                     <input className="btn submit" type="submit" value="Save" />

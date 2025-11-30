@@ -1,0 +1,100 @@
+#login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  min-height: 100vh;
+
+  backdrop-filter: blur(12px);
+}
+
+/* Form container */
+#login {
+   background: rgba(20, 20, 20, 0.28);
+  padding: 40px 50px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  width: 100%;
+  max-width: 420px;
+
+  box-shadow: 0 0 25px rgba(255, 120, 220, 0.15);
+
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Title */
+#login h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* Labels */
+#login label {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: white;
+  text-shadow: 0 0 10px black;
+}
+
+/* Inputs */
+#login input[type="email"],
+#login input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 12px;
+
+  font-size: 15px;
+  color: #fff;
+
+  transition: 0.25s ease;
+}
+
+#login input::placeholder {
+  color: #ffdaf2;
+}
+
+/* Focus effect */
+#login input:focus {
+  outline: none;
+  border-color: #ff9bd7;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Submit button */
+#login .btn.submit {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #ff66c4, #c43eff);
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.25s;
+  margin-top: 5px;
+}
+
+#login .btn.submit:hover {
+  transform: scale(1.03);
+  background: linear-gradient(135deg, #ff82d6, #d05bff);
+}
