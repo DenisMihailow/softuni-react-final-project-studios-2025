@@ -1,7 +1,7 @@
 /* FORM BACKGROUND AREA */
 #add-page {
   width: 100vw;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   justify-content: center;
   padding-top: 120px;
@@ -41,11 +41,11 @@
 }
 
 /* FULL width element (like combobox) */
-.form-group-full {
+/* .form-group-full {
   display: flex;
   flex-direction: column;
   width: 100%;
-}
+} */
 
 /* LABELS */
 label {
