@@ -1,7 +1,26 @@
+import { useNavigate } from "react-router";
+import request from "../utils/request";
+
 export default function SaveYourTime() {
+const navigate = useNavigate();
+    const createReservationHandler = async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+        const  data = Object.fromEntries(formData);
+
+      
+        data.createdOn = Date.now();
+
+       const result = await request('/reservations','POST',data)
+       console.log(result);
+       navigate('/reservations');
+    }
+
+    
     return (
         <section id="add-page">
-            <form id="save-time-form">
+            <form id="save-time-form" onSubmit={createReservationHandler}>
                 <div className="container">
 
                     <h1>Save Your Time</h1>
@@ -48,7 +67,7 @@ export default function SaveYourTime() {
                 </div>
 
                     {/* Submit */}
-                    <input className="btn submit" type="submit" value="Save" />
+                    <input className="btn submit" type="submit" value="Save Reservation" />
 
                 </div>
             </form>

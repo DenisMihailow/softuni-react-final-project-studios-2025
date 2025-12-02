@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import useRequest from "../hooks/useRequest";
 
 const UserContext = createContext({
@@ -72,4 +72,11 @@ export function UserProvider({
     </UserContext.Provider>
   )
 }
+
+export function useUserContext(){
+  const contextData = useContext(UserContext);
+
+  return contextData;
+}
+
 export default UserContext;
