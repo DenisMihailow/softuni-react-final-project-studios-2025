@@ -1,30 +1,41 @@
 import { useEffect, useState } from "react";
-import ReservationsCard from "../reservations-card/ReservationsCard";
+import request from  "../../utils/request.js"
+// import ReservationsCard from "../reservations-card/ReservationsCard";
+import { Link } from "react-router";
 
 const BASE_URL = 'http://localhost:3030/jsonstore/reservations';
 
 export default function Myreservations() {
-    const[reservations, setReservations] = useState([]);
+    const [reservations, setReservations] = useState([]);
 
-    useEffect(()=> {
-        (async () => {
-        try{
-        const response = await fetch(BASE_URL)
-        const result = await response.json();
-        setReservations(Object.values(result));
-        }catch (err){
-            alert(err.message);
-        }
-    })();
-    },[]);
+   useEffect(() => {
+    request("/reservations")
+      .then(res => {
+        setReservations(Object.values(res));
+      })
+      .catch(err => console.log(err));
+  }, []);
     return (
-            <section id="reservations-page">
-            <h1>My Reservations</h1>
+            <section id="my-reservations">
+      <h1 className="reserv-title">My Reservations</h1>
 
-            {reservations.length === 0 && <h3 className="no-articles">No Added Reservations</h3>}
-            <div className="catalog-container">
-                    {reservations.map(reservation => <ReservationsCard key={reservation._id} {...reservation} />)}
+      <div className="reservations-grid">
+        {reservations.map(r => (
+          <div className="reservation-card" key={r._id}>
+            <div className="reservation-left">
+              <img src={r.imageUrl} alt="procedure" className="reservation-avatar" />
             </div>
-        </section>
+
+            <div className="reservation-right">
+              <h3>{r.firstName} {r.lastName}</h3>
+              <p><strong>Procedure:</strong> {r.procedure}</p>
+              <p><strong>Date:</strong> {new Date(r.date).toLocaleDateString()}</p>
+
+              <Link className="btn-details" to={`/reservations/${r._id}/details`}>View Details </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
     );
 }

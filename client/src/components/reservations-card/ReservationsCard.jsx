@@ -8,9 +8,11 @@ export default function ReservationsCard({
         lastName,
         phone,
         procedure,
+        imageUrl,
 }) {
     return (
          <div className="reservations">
+            <img src={imageUrl} alt={procedure} />
                 <div className="details-overlay">
                     <p className="name">{date}</p>
                     <p className="email">{email}</p>

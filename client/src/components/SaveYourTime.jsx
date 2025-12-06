@@ -1,23 +1,25 @@
 import { useNavigate } from "react-router";
 import request from "../utils/request";
+// import { useState } from "react";
 
 export default function SaveYourTime() {
-const navigate = useNavigate();
+    const navigate = useNavigate();
+    // const [procedures, setProcedures] = useState("");
     const createReservationHandler = async (e) => {
         e.preventDefault();
 
         const formData = new FormData(e.target);
-        const  data = Object.fromEntries(formData);
+        const data = Object.fromEntries(formData);
 
-      
+
         data.createdOn = Date.now();
 
-       const result = await request('/reservations','POST',data)
-       console.log(result);
-       navigate('/reservations');
+        const result = await request('/reservations', 'POST', data)
+        console.log(result);
+        navigate('/reservations');
     }
 
-    
+
     return (
         <section id="add-page">
             <form id="save-time-form" onSubmit={createReservationHandler}>
@@ -52,7 +54,7 @@ const navigate = useNavigate();
                     {/* Procedure ComboBox */}
                     <div className="form-group-half">
                         <label htmlFor="procedure">Procedure Type:</label>
-                        <select id="procedure" name="procedure">
+                        <select id="procedure" name="procedure" >
                             <option value="">Select procedure...</option>
                             <option value="manicure">Manicure</option>
                             <option value="gel-nails">Gel Nails</option>
@@ -62,8 +64,13 @@ const navigate = useNavigate();
                         </select>
                     </div>
                     <div className="form-group-half">
-                    <label htmlFor="releaseDate">Release Date:</label>
-                    <input type="date" id="releaseDate" name="date"/>
+                        <label htmlFor="releaseDate">Release Date:</label>
+                        <input type="date" id="releaseDate" name="date" />
+                    </div>
+                    
+                    <div className="form-group-full">
+                    <label htmlFor="imageUrl">Image URL:</label>
+                    <input type="text" id="imageUrl" name="imageUrl" placeholder="Enter image URL..."/>
                 </div>
 
                     {/* Submit */}
@@ -74,3 +81,12 @@ const navigate = useNavigate();
         </section>
     );
 }
+//
+                        // onChange={(e) => setProcedures(e.target.value)}
+                        {/* {procedures === "gel-nails" && (
+                            <img
+                                src="/images/nail.png"
+                                // alt="Gel Nails"
+                                className="procedure-image"
+                            />
+                        )} */}
