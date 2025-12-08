@@ -1,0 +1,59 @@
+.catalog-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+
+.catalog-item {
+  width: 300px;
+  background: rgba(255, 255, 255, 0.05); 
+  backdrop-filter: blur(6px);
+  border-radius: 18px;
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: .3s ease;
+  margin-top: 4rem;  
+}
+
+.catalog-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255,255,255,0.1);
+}
+
+.catalog-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+}
+
+.catalog-title {
+  font-size: 1.6rem;
+  margin-bottom: .5rem;
+}
+
+.catalog-text {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+.catalog-btn {
+  padding: .6rem 1.2rem;
+  border: none;
+  border-radius: 12px;
+  background: #d8a5f3; /* пастелно лилаво, ако искаш друг цвят — казваш */
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: .3s ease;
+}
+
+.catalog-btn:hover {
+  background: #c06be6;
+}

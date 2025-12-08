@@ -10,7 +10,7 @@ export default function Header() {
                     <img src="./images/logo.jpg" alt="logo" />
                 </Link>
 
-                <Link to="/nails">Catalog</Link>
+                <Link to="/nails/catalog">Catalog</Link>
                 {
                     isAuthenticated
                         ? (

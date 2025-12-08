@@ -1,79 +1,55 @@
-
-
-/* ---------------- TEXT TITLE ---------------- */
-.title {
-  position: absolute;
-  top: 130px;
-  width: 100%;
-  text-align: center;
-  font-size: 52px;
-  font-weight: bold;
-  color: rgb(225, 222, 222);
-  text-shadow: 0 0 18px black;
-  letter-spacing: 2px;
-}
-
-/* ---------------- CARD SECTION ---------------- */
-.nails-cards {
+/* ОБЩ КОНТЕЙНЕР */
+.nails {
+  min-height: 100vh;
+   margin-top: 4rem; 
   display: flex;
   justify-content: center;
-  gap: 45px;
-  position: absolute;
-  bottom: 70px;
-  width: 100%;
+  align-items: center; 
+  padding: 4rem 1rem;
 }
 
-.nails-card {
-  width: 240px;
-  height: 350px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  transform: rotate(-4deg);
-  transition: 0.3s ease;
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,0.2);
+.full-sections {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 15rem;
 }
 
-.nails-card:nth-child(2) {
-  transform: rotate(0deg) scale(1.12);
+.full-section {
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  border-radius: 18px;
+  padding: 18px 22px;     /* беше 25px → по-малко */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.nails-card:hover {
-  transform: scale(1.15);
+/* редът със съдържанието */
+.content-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;   /* беше 2rem */
 }
 
-/* IMAGE */
-.nails-card img {
-  width: 100%;
-  height: 70%;
+/* снимките леко по-малки */
+.full-image {
+  width: 160px;    /* беше 200px */
+  height: 160px;
   object-fit: cover;
+  border-radius: 14px;
 }
 
-/* INFO BLOCK */
-.nails-info {
-  padding: 12px;
-  text-align: center;
+/* текстът също леко свит */
+.full-text h2 {
+  margin: 0;
+  font-size: 1.7rem;   /* беше 2rem */
+  color: #f3f3f3;
 }
 
-.nails-info h3 {
-  color: white;
-  font-size: 20px;
-  margin: 5px 0;
-}
-
-.nails-info button {
-  padding: 6px 16px;
-  background: #ff87c0;
-  border: none;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.nails-info button:hover {
-  background: #ff5daa;
+.full-text p {
+  margin-top: 6px;
+  font-size: 1.05rem;
+  color: #f3f3f3;
 }

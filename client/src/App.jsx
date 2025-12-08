@@ -9,6 +9,7 @@ import { useContext } from "react"
 import Myreservations from "./components/my-reservations/Myreservations"
 import Details from "./components/details/Details"
 import Edit from "./components/edit/Edit"
+import Catalog from "./components/catalog/Catalog"
 
 function App() {
 
@@ -21,6 +22,7 @@ const {user} = useContext(UserContext);
 
       <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/nails/catalog" element={<Catalog/>} />
               <Route path="/nails/book" element={<SaveYourTime />} />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
