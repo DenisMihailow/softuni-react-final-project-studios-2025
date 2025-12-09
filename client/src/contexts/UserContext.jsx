@@ -61,6 +61,7 @@ export function UserProvider({
   const userContextValue = {
     user,
     isAuthenticated: !!user?.accessToken,
+    isAdmin: user?.email === "denis_admin@abv.bg",//тук
     registerHandler,
     loginHandler,
     logoutHandler,

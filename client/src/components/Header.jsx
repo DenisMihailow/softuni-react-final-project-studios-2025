@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { useUserContext } from "../contexts/UserContext";
 export default function Header() {
-    const { isAuthenticated } = useUserContext();
+    const { isAuthenticated, isAdmin } = useUserContext();
     return (
         <header>
             {/* <!-- Navigation --> */}
@@ -15,6 +15,8 @@ export default function Header() {
                     isAuthenticated
                         ? (
                             <div id="user">
+                                 {isAdmin && <Link to="/admin/gallery">Admin Gallery</Link>}
+                                <Link to="/gallery">Gallery</Link>                                 
                                 <Link to="/nails/book">Book Now</Link>
                                 <Link to="/logout">Logout</Link>
                                 <Link to="/reservations">My reservations</Link>

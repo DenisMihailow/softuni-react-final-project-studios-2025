@@ -1,0 +1,125 @@
+.admin-gallery {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 1rem;
+}
+
+/* TITLE */
+.admin-gallery h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: #eee;
+}
+
+/* === FORM === */
+.admin-form {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  margin-bottom: 2.5rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.admin-form input,
+.admin-form textarea {
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.admin-form button {
+  margin-top: 0.8rem;
+  padding: 0.6rem;
+  border-radius: 12px;
+  border: none;
+  background: #c77dff;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.admin-form button:hover {
+  background: #9d4edd;
+}
+
+/* === GRID === */
+.admin-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* === CARD === */
+.admin-card {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background: rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 0.9rem 1.1rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* IMAGE LEFT */
+.admin-card img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+
+/* TEXT WRAPPER */
+.admin-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* TITLE */
+.admin-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+  color: #000000;   /* мек пастелен лилав */
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* DESCRIPTION */
+.admin-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  color: #000000;   /* по-мек, не бял */
+  line-height: 1.4;
+}
+
+/* ACTIONS */
+.admin-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.admin-actions button {
+  padding: 0.45rem 1rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff758f, #ff4d6d);
+  color: white;
+  font-size: 0.9rem;
+  transition: 0.2s ease;
+}
+
+.admin-actions button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
