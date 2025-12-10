@@ -11,8 +11,12 @@ export default function Gallery() {
   }, []);
 
   return (
-    <section className="gallery">
-      <h1 className="gallery-title">Gallery</h1>
+   <section className="gallery">
+      {images.length > 0 ? (
+        <h1 className="gallery-title">Gallery</h1>
+      ) : (
+        <h1 className="gallery-title">No photos added to the gallery!</h1>
+      )}
 
       <div className="gallery-grid">
         {images.map(img => (
