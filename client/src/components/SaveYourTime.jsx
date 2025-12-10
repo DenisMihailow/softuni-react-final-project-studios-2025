@@ -1,23 +1,27 @@
 import { useNavigate } from "react-router";
 import request from "../utils/request";
+import { useUserContext } from "../contexts/UserContext";
 // import { useState } from "react";
 
 export default function SaveYourTime() {
     const navigate = useNavigate();
-    // const [procedures, setProcedures] = useState("");
+    const {user}  = useUserContext();
+    console.log(user)
     const createReservationHandler = async (e) => {
-        e.preventDefault();
+    e.preventDefault();
 
-        const formData = new FormData(e.target);
-        const data = Object.fromEntries(formData);
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
 
+    data.createdOn = Date.now();
+    data._ownerId = user._id;
 
-        data.createdOn = Date.now();
+    const result = await request('/reservations', 'POST', data);
+    console.log(result);
 
-        const result = await request('/reservations', 'POST', data)
-        console.log(result);
-        navigate('/reservations');
-    }
+    navigate('/reservations');
+};
+
 
 
     return (
@@ -56,9 +60,7 @@ export default function SaveYourTime() {
                         <label htmlFor="procedure">Procedure Type:</label>
                         <select id="procedure" name="procedure" >
                             <option value="">Select procedure...</option>
-                            <option value="manicure">Manicure</option>
                             <option value="gel-nails">Gel Nails</option>
-                            <option value="nail-art">Nail Art</option>
                             <option value="pedicure">Pedicure</option>
                             <option value="spa">Spa Treatment</option>
                         </select>
@@ -81,12 +83,3 @@ export default function SaveYourTime() {
         </section>
     );
 }
-//
-                        // onChange={(e) => setProcedures(e.target.value)}
-                        {/* {procedures === "gel-nails" && (
-                            <img
-                                src="/images/nail.png"
-                                // alt="Gel Nails"
-                                className="procedure-image"
-                            />
-                        )} */}

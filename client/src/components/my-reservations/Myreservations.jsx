@@ -2,19 +2,29 @@ import { useEffect, useState } from "react";
 import request from  "../../utils/request.js"
 // import ReservationsCard from "../reservations-card/ReservationsCard";
 import { Link } from "react-router";
+import { useUserContext } from "../../contexts/UserContext.jsx";
 
 const BASE_URL = 'http://localhost:3030/jsonstore/reservations';
 
 export default function Myreservations() {
     const [reservations, setReservations] = useState([]);
+    const {user} = useUserContext();
 
    useEffect(() => {
-    request("/reservations")
-      .then(res => {
-        setReservations(Object.values(res));
-      })
-      .catch(err => console.log(err));
-  }, []);
+  if (!user?._id) return;
+
+  request("/reservations")
+    .then(res => {
+      const myReservations = Object.values(res)
+        .filter(r => r._ownerId === user._id);
+
+      setReservations(myReservations);
+    })
+    .catch(err => console.log(err));
+
+}, [user?._id]);
+
+
     return (
             <section id="my-reservations">
       <h1 className="reserv-title">My Reservations</h1>

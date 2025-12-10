@@ -1,12 +1,68 @@
-# React + Vite
+# 💅 Nails Beauty Salon – React Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Това е Single Page Application, разработено с **React**, за онлайн резервации и галерия на салон за красота (маникюр, педикюр, терапии).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✅ Основни функционалности
 
-## Expanding the ESLint configuration
+### 👤 Потребители (Users)
+- Регистрация и вход
+- Създаване на резервация
+- Преглед само на **собствените** резервации
+- Детайли за резервация
+- Редакция и изтриване на собствена резервация
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 👑 Администратор (Admin)
+- Достъп до **Admin Gallery**
+- Качване на снимки
+- Редакция на снимки и описание
+- Изтриване на снимки
+
+### 🌍 Публична част
+- Home страница
+- Catalog
+- Gallery
+- Details
+- Login / Register
+
+---
+
+## 🛠 Използвани технологии
+
+- **React**
+- **React Router**
+- **Context API**
+- **REST API**
+- **CSS (Custom Styling)**
+
+---
+
+## 🔐 Роли
+
+- **Admin** – има достъп до управлението на галерията  
+- **User** – може да прави и управлява своите резервации  
+- **Guest** – може само да разглежда
+
+---
+
+## ✅ Покрити изисквания от заданието
+
+- ✅ Public & Private Part
+- ✅ Catalog / Details
+- ✅ CRUD операции
+- ✅ Аутентикация
+- ✅ Route Guards
+- ✅ React Hooks
+- ✅ Context API
+- ✅ Външни CSS файлове
+- ✅ Динамични страници с параметри
+- ✅ Добър UI / UX
+
+---
+
+## ▶ Стартиране на проекта
+
+```bash
+npm install
+npm run dev
