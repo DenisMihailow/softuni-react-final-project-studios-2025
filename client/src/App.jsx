@@ -14,6 +14,7 @@ import Gallery from "./components/gallery/Gallery"
 import AdminGallery from "./components/admin-gallery/AdminGallery"
 import PrivateRoute from "./guards/AuthGuard"
 import AdminGuard from "./guards/AdminGuard"
+import Logout from "./components/logout/Logout"
 
 function App() {
 
@@ -34,6 +35,7 @@ const {user} = useContext(UserContext);
               <Route path = "/reservations/:reservationId/details" element={<Details user={user}/>} />
               <Route path ="/reservations/:reservationId/edit" element={<Edit />} />
               <Route element={<PrivateRoute />}> <Route path="/reservations" element={<Myreservations />} /> </Route>
+              <Route path="/logout" element={<Logout />} />
       </Routes>
 
     </>
