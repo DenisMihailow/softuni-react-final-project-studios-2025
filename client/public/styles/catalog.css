@@ -16,7 +16,8 @@
   text-align: center;
   border: 1px solid rgba(255,255,255,0.15);
   transition: .3s ease;
-  margin-top: 4rem;  
+  margin-top: 4rem;
+  margin-bottom: 100px;  
 }
 
 .catalog-item:hover {
