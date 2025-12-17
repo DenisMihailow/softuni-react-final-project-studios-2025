@@ -28,18 +28,24 @@ export default function AdminGallery() {
   };
 
   const submitHandler = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (editId) {
-      await request(`/gallery/${editId}`, "PUT", form);
-    } else {
-      await request("/gallery", "POST", form);
-    }
+  if (editId) {
+    const existing = images.find(img => img._id === editId);
 
-    setForm({ title: "", imageUrl: "", description: "" });
-    setEditId(null);
-    loadImages();
-  };
+    await request(`/gallery/${editId}`, "PUT", {
+      ...existing,
+      ...form
+    });
+  } else {
+    await request("/gallery", "POST", form);
+  }
+
+  setForm({ title: "", imageUrl: "", description: "" });
+  setEditId(null);
+  loadImages();
+};
+
 
   const editHandler = (image) => {
     setEditId(image._id);
@@ -57,7 +63,13 @@ export default function AdminGallery() {
   await request(`/gallery/${id}`, "DELETE");
 
   setImages(state => state.filter(img => img._id !== id));
+
+  if (editId === id) {
+    setEditId(null);
+    setForm({ title: "", imageUrl: "", description: "" });
+  }
 };
+
 
 
   return (
@@ -95,8 +107,8 @@ export default function AdminGallery() {
               <p>{img.description}</p>
 
               <div className="admin-actions">
-                <button onClick={() => editHandler(img)}>Edit</button>
-                <button onClick={() => deleteHandler(img._id)}>Delete</button>
+                <button type="button" onClick={() => editHandler(img)}>Edit</button>
+                <button type="button" onClick={() => deleteHandler(img._id)}> Delete </button>
               </div>
             </div>
           </div>

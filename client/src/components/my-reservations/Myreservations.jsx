@@ -26,8 +26,14 @@ export default function Myreservations() {
 
 
     return (
+      
             <section id="my-reservations">
-      <h1 className="reserv-title">My Reservations</h1>
+              {reservations.length > 0 ? (
+        <h1 className="gallery-title">My reservations</h1>
+      ) : (
+        <h1 className="gallery-title">No reservations made!</h1>
+      )}
+      {/* <h1 className="reserv-title">My Reservations</h1> */}
 
       <div className="reservations-grid">
         {reservations.map(r => (

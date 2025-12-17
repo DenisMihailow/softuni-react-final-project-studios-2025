@@ -1,26 +1,54 @@
 import { useNavigate } from "react-router";
 import request from "../utils/request";
 import { useUserContext } from "../contexts/UserContext";
-// import { useState } from "react";
+import { useState } from "react";
 
 export default function SaveYourTime() {
     const navigate = useNavigate();
-    const {user}  = useUserContext();
-    console.log(user)
+    const { user } = useUserContext();
+
+    const [errors, setErrors] = useState({});
     const createReservationHandler = async (e) => {
-    e.preventDefault();
+        e.preventDefault();
 
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData);
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData);
 
-    data.createdOn = Date.now();
-    data._ownerId = user._id;
+        const newErrors = {};
 
-    const result = await request('/reservations', 'POST', data);
-    console.log(result);
+        if (!data.firstName.trim()) {
+            newErrors.firstName = 'First name is required!';
+        }
 
-    navigate('/reservations');
-};
+        if (!data.lastName.trim()) {
+            newErrors.lastName = 'Last name is required!';
+        }
+        if (!data.phone) {
+            newErrors.phone = 'Phone is required!';
+        }
+
+        if (!data.procedure) {
+            newErrors.procedure = 'Procedure is required!';
+        }
+
+        if (!data.date) {
+            newErrors.date = 'Date is required!';
+        }
+
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            return;
+        }
+
+        setErrors({}); // изчистване на грешките
+
+        data.createdOn = Date.now();
+        data._ownerId = user._id;
+
+        await request('/reservations', 'POST', data);
+        navigate('/reservations');
+    };
+
 
 
 
@@ -34,19 +62,22 @@ export default function SaveYourTime() {
                     {/* First Name */}
                     <div className="form-group-half">
                         <label htmlFor="firstName">First Name:</label>
-                        <input type="text" id="firstName" name="firstName" placeholder="First Name..." />
+                        <input type="text" name="firstName" />
+                        {errors.firstName && <p className="error">{errors.firstName}</p>}
                     </div>
 
                     {/* Last Name */}
                     <div className="form-group-half">
                         <label htmlFor="lastName">Last Name:</label>
-                        <input type="text" id="lastName" name="lastName" placeholder="Last Name..." />
+                        <input type="text" name="lastName" />
+                        {errors.lastName && <p className="error">{errors.lastName}</p>}
                     </div>
 
                     {/* Phone */}
                     <div className="form-group-half">
                         <label htmlFor="phone">Phone:</label>
-                        <input type="text" id="phone" name="phone" placeholder="Phone Number..." />
+                        <input type="text" id="phone" name="phone" />
+                        {errors.phone && <p className="error">{errors.phone}</p>}
                     </div>
 
                     {/* Email */}
@@ -58,22 +89,24 @@ export default function SaveYourTime() {
                     {/* Procedure ComboBox */}
                     <div className="form-group-half">
                         <label htmlFor="procedure">Procedure Type:</label>
-                        <select id="procedure" name="procedure" >
+                        <select name="procedure">
                             <option value="">Select procedure...</option>
                             <option value="gel-nails">Gel Nails</option>
                             <option value="pedicure">Pedicure</option>
                             <option value="spa">Spa Treatment</option>
                         </select>
+                        {errors.procedure && <p className="error">{errors.procedure}</p>}
                     </div>
                     <div className="form-group-half">
                         <label htmlFor="releaseDate">Release Date:</label>
-                        <input type="date" id="releaseDate" name="date" />
+                        <input type="date" name="date" />
+                        {errors.date && <p className="error">{errors.date}</p>}
                     </div>
-                    
+
                     <div className="form-group-full">
-                    <label htmlFor="imageUrl">Image URL:</label>
-                    <input type="text" id="imageUrl" name="imageUrl" placeholder="Enter image URL..."/>
-                </div>
+                        <label htmlFor="imageUrl">Image URL:</label>
+                        <input type="text" id="imageUrl" name="imageUrl" placeholder="Enter image URL..." />
+                    </div>
 
                     {/* Submit */}
                     <input className="btn submit" type="submit" value="Save Reservation" />

@@ -11,8 +11,17 @@ export default function Register() {
         const {email, password,phone,confirmPassword } = values;
 
         // Validation
-        if(!email || !password || !phone){
-            return alert('Email,phone and password are requared');
+        // if(!email || !password || !phone){
+        //     return alert('Email,phone and password are requared');
+        // }
+        if(!email ){
+             return alert('Email is requared');
+        }
+        if(!password ){
+             return alert('Password is requared');
+        }
+        if(!phone ){
+             return alert('Phone is requared');
         }
         if(password !== confirmPassword){
             return alert('Password missmatch');
@@ -26,7 +35,7 @@ export default function Register() {
         }catch(err){
             alert(err.message)
         }
-        
+        //тук направи малко по ннормални отговори за връщане на грешки
     }
 
     const {

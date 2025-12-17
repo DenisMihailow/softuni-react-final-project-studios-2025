@@ -12,6 +12,8 @@ import Edit from "./components/edit/Edit"
 import Catalog from "./components/catalog/Catalog"
 import Gallery from "./components/gallery/Gallery"
 import AdminGallery from "./components/admin-gallery/AdminGallery"
+import PrivateRoute from "./guards/AuthGuard"
+import AdminGuard from "./guards/AdminGuard"
 
 function App() {
 
@@ -24,14 +26,14 @@ const {user} = useContext(UserContext);
       <Routes>
               <Route path="/" element={<Home />} />              
               <Route path="/nails/catalog" element={<Catalog/>} />
-              <Route path="/nails/book" element={<SaveYourTime />} />
+              <Route element={<PrivateRoute />}> <Route path="/nails/book" element={<SaveYourTime />} /> </Route>
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
               <Route path="/gallery" element={<Gallery />} />
-              <Route path="/admin/gallery" element={<AdminGallery />} />
+              <Route element={<AdminGuard />}> <Route path="/admin/gallery" element={<AdminGallery />} /> </Route>
               <Route path = "/reservations/:reservationId/details" element={<Details user={user}/>} />
               <Route path ="/reservations/:reservationId/edit" element={<Edit />} />
-              <Route path="/reservations" element={<Myreservations />} />
+              <Route element={<PrivateRoute />}> <Route path="/reservations" element={<Myreservations />} /> </Route>
       </Routes>
 
     </>
